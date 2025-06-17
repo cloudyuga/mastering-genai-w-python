@@ -1,3 +1,4 @@
+# **How MCP works?**
 ![MCP Architeture](mcp.png)
 # Install "uv" : Python package manager
 
