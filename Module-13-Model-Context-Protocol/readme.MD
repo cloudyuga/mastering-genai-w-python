@@ -1,3 +1,4 @@
+![MCP Architeture](mcp.png)
 # Install "uv" : Python package manager
 
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
