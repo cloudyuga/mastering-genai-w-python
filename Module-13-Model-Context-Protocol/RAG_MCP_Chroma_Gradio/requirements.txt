@@ -1,0 +1,11 @@
+openai
+python-dotenv
+gradio
+httpx
+fastmcp
+PyMuPDF
+langchain-chroma
+PyMuPDF 
+tiktoken 
+openai 
+psycopg2-binary
