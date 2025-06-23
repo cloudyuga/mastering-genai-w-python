@@ -3,3 +3,4 @@ python-dotenv
 gradio
 httpx
 fastmcp
+psycopg2
