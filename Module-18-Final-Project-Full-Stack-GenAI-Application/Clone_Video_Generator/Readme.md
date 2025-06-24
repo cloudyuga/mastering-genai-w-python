@@ -1,5 +1,29 @@
 # 🔊 Wav2Lip Voice Cloning Instructions
 
+## 📦 Setup Wav2Lip
+
+1. Clone the Wav2Lip repository:
+    ```bash
+    git clone https://github.com/Rudrabha/Wav2Lip
+    ```
+
+2. Install dependencies:
+    ```bash
+    pip install -r ./Wav2Lip/requirements.txt
+    ```
+
+3. Download the face detection model `s3fd.pth` from [this link](https://www.adrianbulat.com/downloads/python-fan/s3fd-619a316812.pth) and place it inside:
+    ```
+    Wav2Lip/face_detection/detection/sfd/
+    ```
+
+    > ✅ Make sure to rename the downloaded file as:
+    ```
+    s3fd.pth
+    ```
+
+---
+
 ## 🎥 Video Preparation
 
 1. Capture your video using the webcam (no audio required):
@@ -28,30 +52,6 @@
     python voice.py
     ```
     This creates the final `cloned_output.wav`.
-
----
-
-## 📦 Setup Wav2Lip
-
-1. Clone the Wav2Lip repository:
-    ```bash
-    git clone https://github.com/Rudrabha/Wav2Lip
-    ```
-
-2. Install dependencies:
-    ```bash
-    pip install -r ./Wav2Lip/requirements.txt
-    ```
-
-3. Download the face detection model `s3fd.pth` from [this link](https://www.adrianbulat.com/downloads/python-fan/s3fd-619a316812.pth) and place it inside:
-    ```
-    Wav2Lip/face_detection/detection/sfd/
-    ```
-
-    > ✅ Make sure to rename the downloaded file as:
-    ```
-    s3fd.pth
-    ```
 
 ---
 
