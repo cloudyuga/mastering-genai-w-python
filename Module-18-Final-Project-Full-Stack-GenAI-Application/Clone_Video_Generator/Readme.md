@@ -1,5 +1,7 @@
 # 🔊 Wav2Lip Voice Cloning Instructions
 
+Wav2Lip Voice Cloning is a pipeline that generates a realistic lip-synced video using your face video (input_video.mp4) and a voice-cloned audio (cloned_output.wav). It uses the Wav2Lip model for facial lip synchronization and optionally clones your voice using a reference audio sample (ref.wav). The final result is a personalized video (result_voice.mp4) with synchronized lip movements and a voice that sounds like yours — all powered by AI.
+
 ## 📦 Setup Wav2Lip
 
 1. Clone the Wav2Lip repository:
