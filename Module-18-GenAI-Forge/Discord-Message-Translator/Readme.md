@@ -10,7 +10,7 @@
 
 Build a translation app that translates messages from **English to Hindi**.
 
-🔗 Live App: [Gradio App on Hugging Face](https://huggingface.co/spaces/pratikshahp/discord-integration-msg-translation-app)
+🔗 Live App: [Gradio App on Hugging Face](https://huggingface.co/spaces/cloudyuga/msg-translation-app/blob/main/app.py)
 
 If you are not able to run this app, create your own space on huggingface using `translator_app.py`
 
