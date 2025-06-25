@@ -12,6 +12,8 @@ Build a translation app that translates messages from **English to Hindi**.
 
 🔗 Live App: [Gradio App on Hugging Face](https://huggingface.co/spaces/pratikshahp/discord-integration-msg-translation-app)
 
+If you are not able to run this app, create your own space on huggingface using `translator_app.py`
+
 ---
 
 ## ✅ Step 2: Create a Discord Bot (Using `discord_file.py`)
