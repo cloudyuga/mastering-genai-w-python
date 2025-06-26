@@ -6,22 +6,23 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 -> $env:Path = "C:\Users\hardi\.local\bin;$env:Path"   
 
-# Create a new directory for our project
+# To integrate MCP server with Claude Desktop. 
+### Create a new directory for our project
 uv init weather
 cd weather
 
-# Create virtual environment and activate it
+### Create virtual environment and activate it
 uv venv
 -> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 .venv\Scripts\activate
 
 .venv\Scripts\Activate
 
-# Install dependencies
+### Install dependencies
 uv add mcp[cli] httpx
 pip install modelcontextprotocol
 
-# Create our server file
+### Create our server file
 new-item weather.py
 
 What’s happening under the hood? When you ask a question:
@@ -38,7 +39,7 @@ What’s happening under the hood? When you ask a question:
 
 - The response is displayed to you!
 
-# Install Claude Desktop
+### Install Claude Desktop
 Visit https://claude.ai/download to download claude desktop in local machine.
 
 Open Claude Application 
