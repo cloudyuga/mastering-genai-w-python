@@ -6,7 +6,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 -> $env:Path = "C:\Users\hardi\.local\bin;$env:Path"   
 
-# To integrate MCP server with Claude Desktop. 
+# **How to integrate MCP server with Claude Desktop?** 
 ### Create a new directory for our project
 uv init weather
 cd weather
