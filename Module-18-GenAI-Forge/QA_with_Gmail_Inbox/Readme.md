@@ -53,6 +53,7 @@ Then run the Gradio App:
 ```bash
 python gradio_gmail_chat.py
 ```
+### For the first time run gradio_gmail_chat.py,
 
 You will see a URL like this in the terminal:
 ```
@@ -66,3 +67,4 @@ Once completed, you'll see:
 ```
 The authentication flow has completed. You may close this window.
 ```
+Get back to the Gradio UI for QA with Gmail Account
