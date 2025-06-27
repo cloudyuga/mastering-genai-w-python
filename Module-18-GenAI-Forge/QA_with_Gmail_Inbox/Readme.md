@@ -32,6 +32,7 @@
 - Click **Create OAuth client ID**
 - **Application type**: `Desktop app`
 - **Name**: `Gmail-Inbox-Tool` (or any name you prefer)
+- **Create**
 
 ---
 
