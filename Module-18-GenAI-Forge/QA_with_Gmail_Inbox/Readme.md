@@ -1,63 +1,68 @@
-# How to download 
+# 📥 How to Download and Run Gmail Inbox Tool
+
 ## 1. Go to Google Cloud Console
+👉 https://console.cloud.google.com/
 
-https://console.cloud.google.com/
+- Log in with your Google account.
+- Create a new project (or select an existing one).
 
-Log in with your Google account.
-
-Create a new project (or select an existing one).
+---
 
 ## 2. Enable Gmail API
-In the Cloud Console, go to:
 
-"APIs & Services" > "Library"
+- In the Cloud Console, go to:  
+  `APIs & Services` > `Library`
+- Search for **Gmail API**
+- Click **Enable**
 
-Search for Gmail API
-
-Click "Enable"
+---
 
 ## 🛠 3. Create OAuth 2.0 Client Credentials
-Go to: APIs & Services > Credentials
 
-Click “+ CREATE CREDENTIALS” → choose OAuth client ID
+- Navigate to: `APIs & Services` > `Credentials`
+- Click **+ CREATE CREDENTIALS** → choose **OAuth client ID**
 
-Configure OAuth consent screen (if not done yet):
+### If you haven't configured the OAuth consent screen:
+- Click **Get Started**
+- **App name**: e.g., `Gmail-Inbox-App`
+- **User type / Audience**: `External`
+- **Test users**: Add your Gmail address
 
-get strated
+### Then:
+- Click **Create OAuth client ID**
+- **Application type**: `Desktop app`
+- **Name**: `Gmail-Inbox-Tool` (or any name you prefer)
 
-App name: e.g., Gmail-Inbox-App
+---
 
-User type/ Audience: External
+## 📁 4. Download `credentials.json`
 
-Add your Gmail address as a test user
+- After creating the OAuth client, click the download button 📥 next to it.
+- Save the file and optionally rename it.
 
-After configuring, click:
+---
 
-Create OAuth client ID
+# ▶️ How to Run the Application
 
-choose,
-
-Application type: Desktop app
-
-Name: Gmail-Inbox-Tool (or anything)
-
-## 📁 4. Download credentials.json
-After creating the OAuth client, click the download button (📥) next to it.
-
-This is your credentials.json file. Rename it.
-
-# How to run the application
-
-```
+Install required Python packages:
+```bash
 pip install -r requirements.txt
 ```
-Run Gradio App
+
+Then run the Gradio App:
+```bash
+python gradio_gmail_chat.py
 ```
-gradio_gmail_chat.py
+
+You will see a URL like this in the terminal:
+```
+Please visit this URL to authorize this application: https://accounts.google.com
 ```
 
-Please visit this URL to authorize this application: https://accounts.google.com from the terminal and allow 
+Allow access to:
+- View your email messages and settings
 
-View your email messages and settings
-
+Once completed, you'll see:
+```
 The authentication flow has completed. You may close this window.
+```
