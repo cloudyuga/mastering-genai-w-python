@@ -39,7 +39,7 @@
 ## 📁 4. Download `credentials.json`
 
 - After creating the OAuth client, click the download button 📥 next to it.
-- Save the file and optionally rename it.
+- Save the file and optionally rename it as `credentials.json`
 
 ---
 
