@@ -1,5 +1,0 @@
-gradio
-langchain-openai
-python-dotenv
-langchain-community
-beautifulsoup4
