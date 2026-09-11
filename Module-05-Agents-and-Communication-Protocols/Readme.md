@@ -21,7 +21,7 @@ tangible without turning this into a LangGraph/MCP engineering deep-dive.
 | Lab | Notebook/Folder | Description |
 |-----|------------------|-------------|
 | 1 | `Lab-1-Agentic_Workflow_with_Langgraph.ipynb` | A first agentic workflow with LangGraph, built up in stages: a basic LLM node, then a tool-calling agent, then conversational memory across a thread — the "augmented LLM" concept, live. |
-| — | `Model-Context-Protocol/Meeting_Scheduler_MCP_Demo/` | An MCP server exposing check_availability/book_meeting tools over a small mocked calendar, called via OpenAI function calling from a Gradio UI. Recreates the "Book a meeting with Raj tomorrow at 10 AM" example already drawn on this module's own slide — live. |
+| — | `Model-Context-Protocol/Meeting_Scheduler_MCP_Demo/` | An MCP server exposing check_availability/book_meeting tools over a small mocked calendar, called via OpenAI function calling from a Gradio UI. Recreates the "Book a meeting with Raj tomorrow at 10 AM" example already drawn on this module's own slide — live. Runs either as one Colab notebook (`Meeting_Scheduler_MCP_Demo.ipynb`) or as a separate server/client pair (`.py` files) — see `Model-Context-Protocol/Readme.MD`. |
 
 Requires an OpenAI key for both, plus a (free) Tavily key for Lab-1's
 web-search tool section. The MCP demo needs no other accounts — its
