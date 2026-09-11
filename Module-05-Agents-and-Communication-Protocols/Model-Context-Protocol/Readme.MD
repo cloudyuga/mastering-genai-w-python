@@ -3,7 +3,13 @@
 
 # 🧠 MCP Demo
 
-No hands-on demo here right now — the previous weather/news example was
-removed and a replacement hasn't been picked yet. MCP is still covered
-conceptually on the Module 5 slides (why it matters, adoption stats,
-standardized tool access).
+One hands-on MCP integration, kept deliberately small so it can be shown live
+in a training session without a database or third-party account beyond your
+OpenAI key.
+
+| Folder | Description | Key Features |
+|--------|-------------|---------------|
+| **`Meeting_Scheduler_MCP_Demo`** | An MCP server exposing `check_availability` and `book_meeting` tools over a small mocked in-memory calendar, called by a Gradio chatbot via OpenAI function calling. | - Small, self-contained MCP server (`mcp_meeting_scheduler.py`)<br>- Gradio UI shows which tool was picked and what it returned<br>- No database or extra accounts — just your OpenAI key<br>- Recreates the module slide's own "Book a meeting with Raj tomorrow at 10 AM" example |
+
+See `Meeting_Scheduler_MCP_Demo/How-to-Run.md` for setup steps, and its
+`.env` file for which key to fill in.

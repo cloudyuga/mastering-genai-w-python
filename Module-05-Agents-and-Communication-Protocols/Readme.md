@@ -15,18 +15,16 @@ real-world agent examples slide, and closes with a recap.
 
 ## 🧪 Labs
 
-Kept to one notebook — enough to make the slide concepts tangible without
-turning this into a LangGraph/MCP engineering deep-dive.
+Kept to one notebook and one MCP demo — enough to make the slide concepts
+tangible without turning this into a LangGraph/MCP engineering deep-dive.
 
 | Lab | Notebook/Folder | Description |
 |-----|------------------|-------------|
 | 1 | `Lab-1-Agentic_Workflow_with_Langgraph.ipynb` | A first agentic workflow with LangGraph, built up in stages: a basic LLM node, then a tool-calling agent, then conversational memory across a thread — the "augmented LLM" concept, live. |
+| — | `Model-Context-Protocol/Meeting_Scheduler_MCP_Demo/` | An MCP server exposing check_availability/book_meeting tools over a small mocked calendar, called via OpenAI function calling from a Gradio UI. Recreates the "Book a meeting with Raj tomorrow at 10 AM" example already drawn on this module's own slide — live. |
 
-Requires an OpenAI key, plus a (free) Tavily key for Lab-1's web-search
-tool section.
-
-`Model-Context-Protocol/` currently has no hands-on demo — its previous
-weather/news example was removed; see `Model-Context-Protocol/Readme.MD`
-for status. MCP is still covered conceptually on the slides.
+Requires an OpenAI key for both, plus a (free) Tavily key for Lab-1's
+web-search tool section. The MCP demo needs no other accounts — its
+calendar is mocked in-memory.
 
 ---
