@@ -16,10 +16,9 @@ short set of use cases plus a case-study slide with a clickable source link.
 
 | Lab | Notebook | Business Function | Description |
 |-----|----------|--------------------|-------------|
-| 1 | `Lab-3-HR_Assistant.ipynb` | 💼 HR | An HR assistant that answers policy/employee questions. |
-| 2 | `Lab-4-Job_Description_App.ipynb` | 💼 HR | Generates a job description from minimal input (role, skills, location). |
-| 3 | `Lab-5-Email_Drafting_App.ipynb` | 🎧 Customer Support / Sales | Drafts outbound or reply emails from a brief prompt. |
-| 4 | `Lab-6-Market_Reseach_App.ipynb` | 📈 Marketing & Sales | Summarizes/analyzes market research input. |
-| 5 | `Lab-10-Gradio-career-quest.ipynb` | 💼 HR / L&D | An interactive, game-like career-exploration demo. |
+| 1 | `Lab-1-HR_Assistant.ipynb` | 💼 HR | An HR assistant that answers policy/employee questions from the shared `hrdataset/`. |
+| 2 | `Lab-2-Job_Description_App.ipynb` | 💼 HR | Generates a job description from a role/details prompt, or from a company/job-posting URL. |
+| 3 | `Lab-3-Email_Drafting_App.ipynb` | 🎧 Customer Support / Sales | Drafts an email from a subject/context/tone, with drafts saved locally. |
+| 4 | `Lab-4-Market_Reseach_App.ipynb` | 📈 Marketing & Sales | Pulls DuckDuckGo search results on a topic and summarizes them into a market-research report. |
 
 ---
