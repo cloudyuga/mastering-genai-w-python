@@ -18,39 +18,30 @@ Nvidia–HuggingFace acquisition.
 ### Gradio — building a UI in minutes
 | Lab | Notebook | Description |
 |-----|----------|-------------|
-| 1 | `Lab-0-Prompt_Execution.ipynb` | Wire a prompt up to a simple UI. |
-| 2 | `Lab-1-Types_of_Gradio_App.ipynb` | Survey of the different Gradio app types/components. |
-| 3 | `Lab-2-Birthday_Message_Apps.ipynb` | A tiny, fun end-to-end Gradio app. |
+| 1 | `Lab-1-Prompt_Execution_Gradio.ipynb` | Wire a prompt up to a simple `gr.Interface`. |
+| 2 | `Lab-2-Types_of_Gradio_App.ipynb` | Survey of the three Gradio app types — Interface-based, Blocks-based, and ChatInterface-based. |
+| 3 | `Lab-4-Birthday_Message_Apps.ipynb` | A tiny, fun end-to-end Gradio app — multiple inputs, streaming responses, temperature control. |
 
 ### HuggingFace — the model hub
 | Lab | Notebook | Description |
 |-----|----------|-------------|
-| 4 | `Lab-1-HuggingFace_Transformers.ipynb` | Run a pretrained model straight from the Hub. |
-| 5 | `Lab-2-HuggingFace_Models.ipynb` | Browsing/using different model types on HuggingFace. |
-| 6 | `Lab-3-Gradio_Feedback_Analysis.ipynb` | Combine a HuggingFace model with a Gradio front end. |
+| 4 | `Lab-7-HuggingFace_Models.ipynb` | Tour of HuggingFace model types — sentiment/emotion classification, embeddings, text generation, NER — plus a chat-model-based stand-in for summarization, Q&A, and translation now that `transformers` v5 dropped those pipeline shortcuts. |
 
-### Embeddings & Vector Databases
+### Embeddings, Vector Databases & RAG
 | Lab | Notebook | Description |
 |-----|----------|-------------|
-| 7 | `Lab-0-Meaning_Embedding.ipynb` | What an embedding actually captures — a visual "meaning as vectors" demo. |
-| 8 | `Lab-1-Embedding_&_Similarity_Search.ipynb` | Nearest-neighbor similarity search over embeddings. |
-| 9 | `Lab-2-Load_Vectorstore_from_pkl.ipynb` | Loading a persisted vector store. |
-
-### Retrieval-Augmented Generation (RAG)
-| Lab | Notebook | Description |
-|-----|----------|-------------|
-| 10 | `Lab-0-Chat_with_Paragraph.ipynb` | The simplest possible RAG demo — chat with one paragraph. |
-| 11 | `Lab-1-Chat_with_Paragraphs.ipynb` | RAG over multiple paragraphs. |
-| 12 | `Lab-2-Chat_with_PDF.ipynb` | Upload a PDF, ask it questions — the flagship RAG demo for this module. |
-| 13 | `Lab-3-Chroma_hrdataset_QA.ipynb` | RAG over the shared `hrdataset/` using Chroma. |
-| 14 | `Lab-4-Pinecone_Gradio_HR_dataset_QA.ipynb` | Same idea, backed by Pinecone, with a Gradio front end. |
-| 15 | `Lab-5-Hybrid_Search_with_Pinecone.ipynb` | Hybrid (keyword + vector) search — a more production-grade RAG pattern. |
+| 5 | `Lab-5-Chat_with_Paragraph_Embedding_Gradio.ipynb` | The simplest possible RAG demo — embed one paragraph, chat with it. |
+| 6 | `Lab-6-Chat_with_PDF_Embedding_RAG.ipynb` | Upload a PDF, ask it questions — the flagship RAG demo for this module. |
+| 7 | `Lab-8-Chroma_hrdataset_QA.ipynb` | RAG over the shared `hrdataset/` using a persisted ChromaDB index. |
 
 ### LangChain
 | Lab | Notebook | Description |
 |-----|----------|-------------|
-| 16 | `Lab-1-Langchain_basic.ipynb` | Core LangChain building blocks. |
-| 17 | `Lab-2-RAG_with_Langchain.ipynb` | RAG assembled with LangChain instead of raw calls. |
+| 8 | `Lab-9-RAG_with_Langchain.ipynb` | RAG assembled with LangChain (PDF loader, FAISS, `RetrievalQA`) instead of raw API calls. |
+
+Notebook filenames keep their original `Lab-N-*` numbering from before the
+module was trimmed down to these 8 labs, so the numbers run 1, 2, 4–9 (no
+`Lab-3`) — that gap is cosmetic, not a missing file.
 
 Several RAG labs depend on the `hrdataset/` folder at the repo root.
 
