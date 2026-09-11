@@ -29,7 +29,7 @@ See `Guardrailing/Readme.md` for details.
 ### `Securing-LLM-Applications/`
 | Item | Description |
 |------|-------------|
-| `Information-Leak/` | Paired before/after demo — `info_leak.py` reproduces a data leak, `prevent_info_leak.py` shows the fix. |
+| `Information-Leak/` | Paired before/after demo (leaky vs. fixed), combined into one standalone Colab notebook (`Information_Leak_Demo.ipynb`) with a Safe Mode toggle, or as the original separate scripts (`info_leak.py` / `prevent_info_leak.py`). |
 | `Prompt-Injection/` | A live prompt-injection demo showing an attacker overriding system instructions — as a standalone Colab notebook (`Prompt_Injection_Demo.ipynb`) or as `app.py`. |
 
 See `Securing-LLM-Applications/Readme.md` for details.

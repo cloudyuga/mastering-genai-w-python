@@ -8,7 +8,7 @@ This module is dedicated to understanding and mitigating **security risks in Lar
 
 | 🔢 | Topic           | 🔍 Focus Area            | 🧾 Description                                                                 |
 |----|-----------------|--------------------------|--------------------------------------------------------------------------------|
-| 1  | Information-Leak | 🧠 Data Leakage Risks    | Demonstrates how sensitive data (Aadhar number) can leak from LLMs if not properly sanitized or restricted. |
+| 1  | Information-Leak | 🧠 Data Leakage Risks    | Demonstrates how sensitive data (Aadhar number) can leak from LLMs if not properly sanitized or restricted. `Information_Leak_Demo.ipynb` combines both the leaky and safe versions into one standalone Colab notebook with a Safe Mode toggle; `info_leak.py`/`prevent_info_leak.py` are the original separate scripts. |
 | 2  | Prompt-Injection | 🎭 Adversarial Prompts   | Shows how attackers can override system instructions and manipulate LLM responses using cleverly crafted user inputs. `Prompt_Injection_Demo.ipynb` is a standalone Colab version of `app.py`. |
 
 ---
