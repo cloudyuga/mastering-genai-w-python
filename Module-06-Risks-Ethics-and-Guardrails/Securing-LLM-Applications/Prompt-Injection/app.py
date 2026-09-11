@@ -20,15 +20,18 @@ malicious_prompt = (
 # Function to generate LLM response
 def generate_response(user_prompt):
     try:
-        response = client.responses.create(
-            model="gpt-3.5-turbo-0125",  # A frozen dated snapshot - the bare "gpt-3.5-turbo" alias
-            # has drifted onto newer, better-hardened checkpoints and no longer falls for this.
-            input=[
+        # chat.completions, not responses.create: the newer Responses API only
+        # serves current-generation models and 404s on this frozen dated
+        # snapshot. The bare "gpt-3.5-turbo" alias has also drifted onto
+        # newer, better-hardened checkpoints and no longer falls for this.
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo-0125",
+            messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": user_prompt}
             ],
         )
-        return response.output_text
+        return response.choices[0].message.content
     except Exception as e:
         return f"Error: {str(e)}"
 
