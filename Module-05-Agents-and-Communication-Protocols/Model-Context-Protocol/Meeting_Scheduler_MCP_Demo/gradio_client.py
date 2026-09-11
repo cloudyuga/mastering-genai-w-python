@@ -38,8 +38,13 @@ def show_tool_list():
     html += "</ul>"
     return html
 
-# Main query processor (now handles multiple tools)
-async def process_query(query: str):
+# Main query processor - loops until the model stops calling tools, so a
+# "check availability, then book" request can make both calls in sequence.
+# (A single request/response round can only ever produce ONE tool call each
+# time tools= is passed; without the loop, the model could check
+# availability but would then be answering with tools disabled and could
+# never follow up with book_meeting.)
+async def process_query(query: str, max_turns: int = 5):
     async with Client(transport=SSETransport("http://localhost:8000/sse")) as client:
         tools = await client.list_tools()
         tool_specs = [
@@ -54,18 +59,25 @@ async def process_query(query: str):
         ]
 
         messages = [{"role": "user", "content": query}]
-        response = openai_client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=messages,
-            tools=tool_specs
-        )
-        choice = response.choices[0].message
-        messages.append(choice)
-
         tool_used_names = []
         tool_outputs = []
 
-        if choice.tool_calls:
+        for _ in range(max_turns):
+            response = openai_client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=messages,
+                tools=tool_specs
+            )
+            choice = response.choices[0].message
+            messages.append(choice)
+
+            if not choice.tool_calls:
+                return (
+                    choice.content,
+                    ", ".join(tool_used_names) if tool_used_names else "No tool used",
+                    "\n\n".join(tool_outputs) if tool_outputs else "N/A",
+                )
+
             for tool_call in choice.tool_calls:
                 fn_name = tool_call.function.name
                 fn_args = json.loads(tool_call.function.arguments)
@@ -81,13 +93,11 @@ async def process_query(query: str):
                     "content": tool_result_text
                 })
 
-        final_response = openai_client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=messages
+        return (
+            "I wasn't able to finish this request in the allotted steps.",
+            ", ".join(tool_used_names) if tool_used_names else "No tool used",
+            "\n\n".join(tool_outputs) if tool_outputs else "N/A",
         )
-        result = final_response.choices[0].message.content
-
-        return result, ", ".join(tool_used_names) if tool_used_names else "No tool used", "\n\n".join(tool_outputs) if tool_outputs else "N/A"
 
 # Wrapper to run async inside Gradio
 def ask_openai(user_input):
