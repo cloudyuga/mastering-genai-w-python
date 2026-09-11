@@ -1,20 +1,15 @@
 # **How MCP works?**
 ![MCP Architeture](mcp.png)
 
-# 🧠 MCP Labs
+# 🧠 MCP Demo
 
-This module includes a collection of practical integrations of modern AI models, API services, and databases using tools like Claude, Gradio, ChromaDB, and PostgreSQL. These modules are designed to be used individually or together for rapid experimentation and prototyping.
+One hands-on MCP integration, kept deliberately small so it can be shown live
+in a training session without a database or third-party account beyond the
+API keys below.
 
----
+| Folder | Description | Key Features |
+|--------|-------------|---------------|
+| **`Weather_News_MCP_Demo`** | An MCP server exposing a weather tool and a news tool, called by a Gradio chatbot via OpenAI function calling. | - Small, self-contained MCP server (`mcp_weather_news.py`)<br>- Gradio UI shows which tool was picked and what it returned<br>- No database — just two free API keys (OpenWeather, NewsAPI) plus your OpenAI key |
 
-## 📦 Module Overview
-
-
-| Module                         | Description                                                                 | Key Features |
-|-------------------------------|-----------------------------------------------------------------------------|--------------|
-| **`1-Claude_Desktop_Integration`** | Integration of Claude (Anthropic) with desktop apps.                        | - Loads config from `claude_desktop_config.json`<br>- Uses MCPServer tools<br>- Ideal for local AI assistants |
-| **`2-Stdio`**                     | Interactive AI assistant via standard input/output.                         | - Terminal-based chatbot with Gradio<br>- No GUI dependencies<br>- MCP server runs in background |
-| **`3-SSE`**                       | Server-Sent Events (SSE) integration module.                                | - Real-time FastAPI streaming via SSE<br>- Supports `fastmcp.client` transport |
-| **`4-External_API_call_for_weather_&_news`** | Uses external APIs for contextual info.                              | - Integrates weather/news APIs<br>- Outputs formatted results<br>- Useful for AI agent enhancement |
-| **`5-Postgres_DB_MCP_Gradio`**   | RAG app with PostgreSQL + pgvector backend.                                 | - LangChain RAG with pgvector<br>- Gradio frontend + MCP backend<br>- Requires Postgres setup |
-| **`6-RAG_MCP_Chroma_Gradio`**    | Updated RAG pipeline using **ChromaDB** instead of Postgres.                | - Gradio UI for PDF upload + QA<br>- Stores embeddings in ChromaDB<br>- Lightweight, no DB setup needed |
+See `Weather_News_MCP_Demo/How-to-Run.md` for setup steps, and its `.env`
+file for which keys to fill in.

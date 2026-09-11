@@ -15,21 +15,15 @@ real-world agent examples slide, and closes with a recap.
 
 ## 🧪 Labs
 
-### Agent fundamentals & LangGraph
-| Lab | Notebook | Description |
-|-----|----------|-------------|
-| 1 | `Lab-1-Agentic_Workflow_with_Langgraph.ipynb` | A first agentic workflow built with LangGraph. |
-| 2 | `Lab-2-Hr_Assistant_with_Memory.ipynb` | An agent with conversational memory — the "augmented LLM" concept, live. |
-| 3 | `Lab-3-Connect_LangSmith.ipynb` | Observability for agent runs via LangSmith. |
-| 4 | `Lab-4-Langsmith_Langgraph_Demo.ipynb` | LangGraph + LangSmith combined. |
-| — | `LangGraph/` (`LG01`–`LG11`) | A deeper, sequential set of LangGraph labs — basic concepts, ReAct agents, RAG-with-LangGraph, streaming, human-in-the-loop, multi-agent — see `LangGraph/readme.MD`. |
+Kept to one notebook and one MCP demo — enough to make the slide concepts
+tangible without turning this into a LangGraph/MCP engineering deep-dive.
 
-### Model Context Protocol (MCP)
-| Folder | Description |
-|--------|-------------|
-| `Model-Context-Protocol/` | Seven hands-on MCP integrations — Claude Desktop, stdio, SSE, an external weather/news API, a Postgres-backed RAG agent, a Chroma-backed RAG agent, and an MCP + Zapier + Gmail agent that actually sends email. See `Model-Context-Protocol/Readme.MD` for the full breakdown. |
+| Lab | Notebook/Folder | Description |
+|-----|------------------|-------------|
+| 1 | `Lab-1-Agentic_Workflow_with_Langgraph.ipynb` | A first agentic workflow with LangGraph, built up in stages: a basic LLM node, then a tool-calling agent, then conversational memory across a thread — the "augmented LLM" concept, live. |
+| — | `Model-Context-Protocol/Weather_News_MCP_Demo/` | A small MCP server exposing weather and news tools, called via OpenAI function calling from a Gradio UI. Shows MCP's "standardized tool access" idea concretely, without a database or extra accounts. |
 
-Several of the MCP demos require their own API keys/credentials — see the
-`.env` placeholders inside each subfolder.
+Requires an OpenAI key for both, plus a (free) Tavily key for Lab-1's
+web-search tool section and OpenWeather/NewsAPI keys for the MCP demo.
 
 ---

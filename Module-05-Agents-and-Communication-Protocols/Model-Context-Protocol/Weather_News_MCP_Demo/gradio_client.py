@@ -1,4 +1,5 @@
 import asyncio
+import json
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -8,16 +9,15 @@ import gradio as gr
 
 # Load OpenAI API key
 load_dotenv()
-MCP_SERVER_URL = os.getenv("MCP_SERVER_URL")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-openai_client = OpenAI()
+openai_client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Global tool list cache
 tool_list = []
 
 # Load available tools from MCP
 async def load_tools():
-    async with Client(transport=SSETransport(MCP_SERVER_URL)) as client:
+    async with Client(transport=SSETransport("http://localhost:8000/sse")) as client:
         tools = await client.list_tools()
         tool_list.clear()
         for tool in tools:
@@ -40,7 +40,7 @@ def show_tool_list():
 
 # Main query processor (now handles multiple tools)
 async def process_query(query: str):
-    async with Client(transport=SSETransport(MCP_SERVER_URL)) as client:
+    async with Client(transport=SSETransport("http://localhost:8000/sse")) as client:
         tools = await client.list_tools()
         tool_specs = [
             {
@@ -68,7 +68,7 @@ async def process_query(query: str):
         if choice.tool_calls:
             for tool_call in choice.tool_calls:
                 fn_name = tool_call.function.name
-                fn_args = eval(tool_call.function.arguments)
+                fn_args = json.loads(tool_call.function.arguments)
                 tool_result = await client.call_tool(fn_name, fn_args)
 
                 tool_used_names.append(fn_name)
