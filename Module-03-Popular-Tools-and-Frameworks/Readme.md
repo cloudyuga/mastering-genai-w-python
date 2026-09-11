@@ -34,14 +34,12 @@ Nvidia–HuggingFace acquisition.
 | 6 | `Lab-6-Chat_with_PDF_Embedding_RAG.ipynb` | Upload a PDF, ask it questions — the flagship RAG demo for this module. |
 | 7 | `Lab-8-Chroma_hrdataset_QA.ipynb` | RAG over the shared `hrdataset/` using a persisted ChromaDB index. |
 
-### LangChain
-| Lab | Notebook | Description |
-|-----|----------|-------------|
-| 8 | `Lab-9-RAG_with_Langchain.ipynb` | RAG assembled with LangChain (PDF loader, FAISS, `RetrievalQA`) instead of raw API calls. |
+LangChain is still covered on the slides (see below), but currently has no
+dedicated lab in this module — `Lab-9-RAG_with_Langchain.ipynb` was removed.
 
 Notebook filenames keep their original `Lab-N-*` numbering from before the
-module was trimmed down to these 8 labs, so the numbers run 1, 2, 4–9 (no
-`Lab-3`) — that gap is cosmetic, not a missing file.
+module was trimmed down to these 7 labs, so the numbers run 1, 2, 4–8 (no
+`Lab-3`, no `Lab-9`) — that gap is cosmetic, not a missing file.
 
 Several RAG labs depend on the `hrdataset/` folder at the repo root.
 
