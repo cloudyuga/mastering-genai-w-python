@@ -21,7 +21,8 @@ malicious_prompt = (
 def generate_response(user_prompt):
     try:
         response = client.responses.create(
-            model="gpt-3.5-turbo",  # Or gpt-3.5 it will not work with gpt-4.1
+            model="gpt-3.5-turbo-0125",  # A frozen dated snapshot - the bare "gpt-3.5-turbo" alias
+            # has drifted onto newer, better-hardened checkpoints and no longer falls for this.
             input=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": user_prompt}
